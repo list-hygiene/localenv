@@ -1,0 +1,22 @@
+os_name: ~
+file_system: ~
+docker_mode: root
+services_restart_policy: always
+
+projects:
+  - name: api
+    src: git@github.com:list-hygiene/api.git
+  - name: studio
+    src: git@github.com:list-hygiene/studio.git
+
+enabled_services:
+  # storages
+  - db
+  - storage
+
+  # projects
+  - api
+  - studio
+
+  # tools
+  - adminer

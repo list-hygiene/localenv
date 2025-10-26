@@ -1,0 +1,12 @@
+  api:
+    image: airlance/go:dev
+    volumes:
+      - ./projects/api:/app
+    restart: {{ services_restart_policy }}
+    environment:
+      DOMAINS: api.hygiene.localhost
+    ports:
+      - 2222:8080
+    depends_on:
+      - storage
+      - db
